@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../styles.css">
-    <script src="../script.js"></script>
+    <script src="../common.js" defer></script>
     <title>My Practice Website</title> 
 </head>
 <body>
@@ -12,14 +12,6 @@
         <div id="navbar"></div> <!-- Placeholder for the navbar -->
     </header>
 
-    <script>
-        fetch('/navbar.html')  // Path to the navbar file
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbar').innerHTML = data;  // Insert the content into the 'navbar' div
-            })
-            .catch(error => console.error('Error loading navbar:', error));  // Log any error
-    </script>
     <main>
         <div class="feedback_form">
             <div class="feedback_design">
@@ -44,12 +36,6 @@
             </div>
         </div>
     </main>
-    <!-- Video Section -->
-    <div class="video-container">
-        <video autoplay muted loop id="myVideo">
-            <source src="../src/video1 .mp4" type="video/mp4">
-        </video>
-    </div>
     <footer class="footer">
         <p>&copy; 2025 My Practice Website By Hannah Ang</p>
     </footer> 

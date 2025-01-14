@@ -20,7 +20,11 @@
     background-color: pink; /* background color on hover */
     color: #FFFFFF; /* color on hover */
 }
-#welcome-message, #welcome-tomy-web {
+#welcome-message {
+    text-align: center; /* center the text */
+    padding-top: 23vh;
+}
+#welcome-tomy-web {
     text-align: center; /* center the text */
 }
 .welcome {
@@ -34,8 +38,8 @@
     padding: 20px; /* Padding around text */
     background-color: rgba(0, 0, 0, 0.5); /*Add contrast with semi-transparent background */
     border-radius: 10px; /* Optional: Rounded corners */
-    width: 50%; /* Optional: Set a width */
-    height: 50%;
+    width: 70%; /* Optional: Set a width */
+    height: 70%;
     max-width: 600px;
 }
 
@@ -43,7 +47,7 @@
 .list-center {
     display: inline-block; /* Display list inline */
     list-style: disc; /* Bullet points */
-    text-align: center; /* Center the list */
+    text-align:left; /* Center the list */
     margin: 0;
     padding: 0;
 }
@@ -73,8 +77,14 @@
     text-align: center;
     position: right;
     z-index: -1; /* Ensure it appears below the welcome message but above the video */
-    height: 1px;
-    padding: 20px;
+    height: 50px;
+}
+.image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: auto;
 }
 .footer {
     position: fixed;
@@ -100,24 +110,35 @@ body, html {
     width: 100%; /* Ensure full width of the screen */
 }
 .feedback_form {
-    padding: 20px;
-    max-width: 500px;
-    width: 90%; /* Responsive width */
+    width: 100%; /* Responsive width */
     margin: 50px auto; /* Center horizontally */
     z-index: 2;
-    position: absolute;
+    position: absolute; /* Position absolute to overlay video */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for perfect centering */
+    color: rgb(196, 97, 173); /* pink text for readability */
+    text-align: center; /* Center text */
+    padding: 10px; /* Padding around text */
+    border-radius: 10px; /* Optional: Rounded corners */
+    max-width: 600px;
+    
+}
 
 .feedback_design {
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0.95;
+    
 }
 #pfeedback {
     text-align: justify;
     font-size: 15px;
     color: #000000;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
 }
 #name, #email {
     width: 85%;
@@ -138,7 +159,7 @@ body, html {
     border-radius: 5px;
 }
 #submit {
-    background-color: #4CAF50;
+    background-color: rgb(196, 97, 173);
     color: white;
     padding: 10px 20px;
     margin: 10px 0;
@@ -162,4 +183,33 @@ body, html {
     .feedback_form {
         padding: 10px;
     }
+}
+.banner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: #000000;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    z-index: 1;
+    position: absolute;
+    top: 22%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.banner-content {
+    background-color: palevioletred;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+}
+.banner-button {
+    background-color: rgb(139, 44, 117);
+    color: rgb(222, 202, 221);
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }

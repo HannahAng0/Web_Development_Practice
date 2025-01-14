@@ -4,34 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../styles.css">
-    <script src="../script.js"></script>
+    <script src="../common.js" defer></script>
     <title>My Practice Website</title> 
 </head>
 <body>
     <header>
         <div id="navbar"></div> <!-- Placeholder for the navbar -->
     </header>
-
-    <script>
-        fetch('/navbar.html')  // Path to the navbar file
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbar').innerHTML = data;  // Insert the content into the 'navbar' div
-            })
-            .catch(error => console.error('Error loading navbar:', error));  // Log any error
-    </script>
-    
-
-    <!-- Video Section -->
-    <div class="video-container">
-        <video autoplay muted loop id="myVideo">
-            <source src="../src/video1 .mp4" type="video/mp4">
-        </video>
-    </div>
-
     <!-- Greetings Section -->
     <main>
         <div class="welcome">
+            <div class="black-container">
+                <img src="../src/src1.jpg" alt="hannah" class="image" width="100" height="100">
+            </div>
             <div id="welcome-message"></div>
             <h1 id="welcome-tomy-web">Welcome to my practice website</h1>
             <p>This is a practice website that I am using to learn HTML and CSS.</p>
@@ -39,11 +24,9 @@
             <ul class="list-center">
                 <li>HTML basics</li>
                 <li>CSS basics</li>
+                <li>A little bit of JavaScript Integration</li>
                 <li>How to create a simple website</li>
             </ul>
-            <div class="black-container">
-                <img src="../src/src1.jpg" alt="hannah" class="image" width="100" height="100">
-            </div>
         </div>
     </main>
 

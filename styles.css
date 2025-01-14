@@ -4,7 +4,8 @@
     overflow: hidden; /* hide the overflow */
     background: hsla(0, 26%, 77%, 0.9); /* background color with opacity */
     padding: 10px; /* top right bottom left */
-    gap: 50px; /* gap between links */
+    gap: 20px; /* gap between links */
+    
 }
 .nav a {
     color: #000000; /* color of the link */
@@ -31,6 +32,8 @@
     padding: 20px; /* Padding around text */
     background-color: rgba(0, 0, 0, 0.5); /*Add contrast with semi-transparent background */
     border-radius: 10px; /* Optional: Rounded corners */
+    width: 50%; /* Optional: Set a width */
+    height: 50%;
 }
 
 /* List styles */
@@ -48,6 +51,7 @@
     height: 100vh; /* Full height of the viewport */
     width: 100%; /* Full width of the viewport */
     overflow: hidden; /* Hide overflowing content */
+    margin: 0;
 }
 
 #myVideo {
@@ -60,4 +64,35 @@
     height: auto;
     z-index: -1; /* Send video to the background */
     object-fit: cover; /* Ensures the video scales properly */
+}
+.black-container {
+    color: #FFFFFF;
+    text-align: center;
+    position: right;
+    z-index: -1; /* Ensure it appears below the welcome message but above the video */
+    height: 1px;
+    padding: 20px;
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+/* Reset default margin and padding */
+body, html {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    width: 100%; /* Ensure the body spans the full width */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Additional reset for container alignment */
+.video-container, .black-container, .nav {
+    margin: 0; /* Remove any container-specific margins */
+    padding: 0; /* Remove any container-specific padding */
+    width: 100%; /* Ensure full width of the screen */
 }

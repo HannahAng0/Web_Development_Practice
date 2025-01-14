@@ -4,28 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../styles.css">
-    <script src="../scipt.js"></script>
+    <script src="../script.js"></script>
     <title>My Practice Website</title> 
 </head>
 <body>
     <header>
-        <nav class="nav">
-            <a href="homepage.html">Home</a>
-            <a href="aboutme.html">About Me</a>
-            <a href="projects.html">Projects</a>
-            <a href="logsign.html">Sign Up/Log In</a>
-        </nav>
+        <div id="navbar"></div> <!-- Placeholder for the navbar -->
     </header>
-    <!--video section-->
+
+    <script>
+        fetch('/navbar.html')  // Path to the navbar file
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;  // Insert the content into the 'navbar' div
+            })
+            .catch(error => console.error('Error loading navbar:', error));  // Log any error
+    </script>
+    
+
+    <!-- Video Section -->
     <div class="video-container">
         <video autoplay muted loop id="myVideo">
             <source src="../src/video1 .mp4" type="video/mp4">
         </video>
-    <!--greetings section-->
+    </div>
+
+    <!-- Greetings Section -->
     <main>
         <div class="welcome">
             <div id="welcome-message"></div>
-            <h1 id="welcome-tomy-web">Welcome to my practice website</h1> <!-- Placeholder for JS message -->
+            <h1 id="welcome-tomy-web">Welcome to my practice website</h1>
             <p>This is a practice website that I am using to learn HTML and CSS.</p>
             <h2>What I have learned so far:</h2>
             <ul class="list-center">
@@ -36,13 +44,11 @@
             <div class="black-container">
                 <img src="../src/src1.jpg" alt="hannah" class="image" width="100" height="100">
             </div>
-    
         </div>
     </main>
-    
-    </body>
-    <footer class="footer">
-        <p>&copy; 2020 My Practice Website</p>
-    </footer> 
 
+    <footer class="footer">
+        <p>&copy; 2025 My Practice Website By Hannah Ang</p>
+    </footer> 
+</body>
 </html>

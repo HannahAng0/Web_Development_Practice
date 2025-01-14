@@ -8,13 +8,23 @@
 </head>
 <body>
     <header>
-        <nav class="nav">
-            <a href="homepage.html">Home</a>
-            <a href="aboutme.html">About Me</a>
-            <a href="projects.html">Projects</a>
-            <a href="logsign.html">Sign Up/Log In</a>
-        </nav>
+        <div id="navbar"></div> <!-- Placeholder for the navbar -->
     </header>
+
+    <script>
+        fetch('/navbar.html')  // Path to the navbar file
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;  // Insert the content into the 'navbar' div
+            })
+            .catch(error => console.error('Error loading navbar:', error));  // Log any error
+    </script>
+        <!-- Video Section -->
+    <div class="video-container">
+        <video autoplay muted loop id="myVideo">
+            <source src="../src/video1 .mp4" type="video/mp4">
+        </video>
+    </div>
     <main>
         <h1>Welcome to my practice website</h1>
         <p>Hi! Im Hannah Ang</p>
@@ -26,8 +36,8 @@
     </body>
     </main>
     
-    <footer>
-        <p>&copy; 2020 My Practice Website</p>
+    <footer class="footer">
+        <p>&copy; 2025 My Practice Website By Hannah Ang</p>
     </footer> 
 
 </html>

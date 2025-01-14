@@ -3,9 +3,10 @@
     background-color: #FFFFFF; /* background color */
     overflow: hidden; /* hide the overflow */
     background: hsla(0, 26%, 77%, 0.9); /* background color with opacity */
-    padding: 10px; /* top right bottom left */
-    gap: 20px; /* gap between links */
-    
+    padding-top: 100px; /* top right bottom left */
+    gap: 50px; /* gap between links */
+    justify-content: center; /* center the links */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* add shadow */
 }
 .nav a {
     color: #000000; /* color of the link */
@@ -15,7 +16,7 @@
     font-size: 20px; /* font size */
 }
 .nav a:hover {
-    background-color: #000000; /* background color on hover */
+    background-color: pink; /* background color on hover */
     color: #FFFFFF; /* color on hover */
 }
 #welcome-message, #welcome-tomy-web {

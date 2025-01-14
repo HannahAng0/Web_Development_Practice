@@ -1,0 +1,63 @@
+.nav {
+    display: flex; /* display link in a row*/
+    background-color: #FFFFFF; /* background color */
+    overflow: hidden; /* hide the overflow */
+    background: hsla(0, 26%, 77%, 0.9); /* background color with opacity */
+    padding: 10px; /* top right bottom left */
+    gap: 50px; /* gap between links */
+}
+.nav a {
+    color: #000000; /* color of the link */
+    text-align: center; /* center the text */
+    padding: 14px 16px; /* top bottom right left */
+    text-decoration: none; /* remove underline */
+    font-size: 20px; /* font size */
+}
+.nav a:hover {
+    background-color: #000000; /* background color on hover */
+    color: #FFFFFF; /* color on hover */
+}
+#welcome-message, #welcome-tomy-web {
+    text-align: center; /* center the text */
+}
+.welcome {
+    position: absolute; /* Position absolute to overlay video */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for perfect centering */
+    z-index: 1; /* Ensure it appears above the video */
+    color: white; /* White text for readability */
+    text-align: center; /* Center text */
+    padding: 20px; /* Padding around text */
+    background-color: rgba(0, 0, 0, 0.5); /*Add contrast with semi-transparent background */
+    border-radius: 10px; /* Optional: Rounded corners */
+}
+
+/* List styles */
+.list-center {
+    display: inline-block; /* Display list inline */
+    list-style: disc; /* Bullet points */
+    text-align: center; /* Center the list */
+    margin: 0;
+    padding: 0;
+}
+
+/* Video container styles */
+.video-container {
+    position: relative; /* Creates context for positioning child elements */
+    height: 100vh; /* Full height of the viewport */
+    width: 100%; /* Full width of the viewport */
+    overflow: hidden; /* Hide overflowing content */
+}
+
+#myVideo {
+    position: absolute; /* Ensure video covers the container */
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; /* Send video to the background */
+    object-fit: cover; /* Ensures the video scales properly */
+}

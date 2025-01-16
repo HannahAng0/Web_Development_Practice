@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    fetch('/navbar.html')  // Path to the navbar file
+    fetch('/navbar/navbar.html')  // Path to the navbar file
         .then(response => response.text())
         .then(data => {
             const navbar = document.getElementById('navbar');
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     
     welcomeMessage.textContent = message;
-    welcomeMessage.style.fontSize = "2.5rem";
-    welcomeMessage.style.color = "teal";
-    welcomeMessage.style.marginTop = "50px";
+    welcomeMessage.style.fontSize = "30px";
+    welcomeMessage.style.color = "white";
+    welcomeMessage.style.marginTop = "0";
 });

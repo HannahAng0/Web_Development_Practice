@@ -1,49 +1,117 @@
+/* Navigation bar styles */
 .nav {
-    display: flex; /* display link in a row*/
-    background-color: #FFFFFF; /* background color */
-    overflow: hidden; /* hide the overflow */
-    background: hsla(0, 26%, 77%, 0.9); /* background color with opacity */
-    padding-top: 100px; /* top right bottom left */
-    gap: 50px; /* gap between links */
-    justify-content: center; /* center the links */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* add shadow */
+    display: flex; /* Arrange links in a row */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center links horizontally */
+    overflow: hidden; /* Hide overflow */
+    background: hsla(331, 41%, 53%, 0.9); /* Background color with opacity */
+    padding-top: 100px; /* Space at the top */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
+    height: 65px; /* Fixed height */
+    width: 100%; /* Full width */
+    z-index: 3;
+}
+
+.navdiv {
+    display: flex;
+    align-items: center;
+    width: 100%; /* Ensure full width */
+    max-width: 100%\; /* Optional: set a max width for the container */
+}
+
+.uldiv {
+    width: 100%; /* Ensure full width */
+}
+
+.logo {
+    display: flex; /* Use flex for alignment */
+    align-items: center; /* Vertically align items */
+    margin-right: auto; /* Push logo to the left */
+    padding-right: 10px; /* Adjust spacing */
+}
+
+.logo a {
+    color: #fefaff; /* Text color */
+    font-size: 20px; /* Font size */
+    font-weight: bold; /* Bold text */
+    text-transform: uppercase; /* Uppercase text */
+    text-decoration: none; /* Remove underline */
+    padding: 0; /* Remove extra padding */
+    padding-left: 70px;
 
 }
+
 .nav a {
-    color: #000000; /* color of the link */
-    text-align: center; /* center the text */
-    padding: 14px 16px; /* top bottom right left */
-    text-decoration: none; /* remove underline */
-    font-size: 20px; /* font size */
-    transition: background-color 0.3s, color 0.3s ease; /* transition effect */
-    z-index: 2; /* ensure it appears above the video */
+    text-decoration: none; /* Remove underline */
+    color: #fefaff; /* Text color */
+    z-index: 3;
 }
-.nav a:hover {
-    background-color: pink; /* background color on hover */
-    color: #FFFFFF; /* color on hover */
+
+#linavbar {
+    list-style-type: none; /* Remove bullet points */
+    margin: 0 120px; /* Horizontal spacing between items */
+    z-index: 3;
 }
+
+#linavbar a {
+    color: #fefaff; /* Text color */
+    font-size: 16px; /* Font size */
+    font-weight: bold; /* Bold text */
+    text-transform: uppercase; /* Uppercase text */
+    text-decoration: none; /* Remove underline */
+    z-index: 3;
+}
+
+#ulnavbar {
+    display: flex; /* Arrange items in a row */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    justify-content: center; /* Center links horizontally */
+    width: 100%; /* Full width */
+    z-index: 3;
+}
+.whole-container {
+    position: relative; /* Position relative for absolute positioning */
+    width: 100%; /* Full width */
+    height: 100vh; /* Full height of the viewport */
+    overflow: hidden; /* Hide overflowing content */
+    z-index: -1; /* Ensure it appears below the welcome message */
+    background-color: #fefaff;
+    background-color: rgba(0, 0, 0, 0.25); /*Add contrast with semi-transparent background */
+
+}
+
 #welcome-message {
     text-align: center; /* center the text */
-    padding-top: 23vh;
+    font-size: 10px;
+    z-index: 2;
 }
-#welcome-tomy-web {
+#welcome-tomy-web, h2, ul {
     text-align: center; /* center the text */
+    color: #fefaff;
+
+}
+#pwhite{
+    color: #ffffff;
+
 }
 .welcome {
-    position: absolute; /* Position absolute to overlay video */
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Adjust for perfect centering */
-    z-index: 1; /* Ensure it appears above the video */
-    color: white; /* White text for readability */
-    text-align: center; /* Center text */
-    padding: 20px; /* Padding around text */
-    background-color: rgba(0, 0, 0, 0.5); /*Add contrast with semi-transparent background */
-    border-radius: 10px; /* Optional: Rounded corners */
-    width: 70%; /* Optional: Set a width */
-    height: 70%;
-    max-width: 600px;
+    position: relative; /* Creates a positioning context for child elements */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto; /* Ensure the parent adjusts to content size */
+    position: absolute; /* Allows overlapping */
+    top: 0%; /* Adjust the vertical positioning */
+    left: 0; /* Center horizontally */
+    width: 100%; /* Full width of the container */
+    height: 300px; /* Full height of the container */
+    text-align: center; /* Center-align text inside */
+    z-index: 2; /* Ensure it appears above the black container and image */
+    padding: 10px 20px; /* Optional: Add padding around the text */
+    border-radius: 10px; /* Optional: Round corners */
 }
+
 
 /* List styles */
 .list-center {
@@ -56,16 +124,18 @@
 
 /* Video container styles */
 .video-container {
-    position: relative; /* Creates context for positioning child elements */
-    height: 100vh; /* Full height of the viewport */
+    position: fixed; /* Fixes the video in place while scrolling */
+    top: 0;
+    left: 0;
+    height: 100%; /* Full height of the viewport */
     width: 100%; /* Full width of the viewport */
     overflow: hidden; /* Hide overflowing content */
     margin: 0;
-    z-index: -2;
+    z-index: -2; /* Send container to the background */
 }
 
 #myVideo {
-    position: absolute; /* Ensure video covers the container */
+    position: absolute; /* Ensures video covers the container */
     top: 0;
     left: 0;
     min-width: 100%;
@@ -75,21 +145,40 @@
     z-index: -2; /* Send video to the background */
     object-fit: cover; /* Ensures the video scales properly */
 }
+.fortext {
+    position: absolute; /* Allows overlapping */
+    top: 0%; /* Adjust the vertical positioning */
+    left: 0; /* Center horizontally */
+    width: 100%; /* Full width of the container */
+    height: 300px; /* Full height of the container */
+    text-align: center; /* Center-align text inside */
+    z-index: 2; /* Ensure it appears above the black container and image */
+    background: hsla(331, 41%, 53%, 0.50); /* Optional: Add background for readability */
+    padding-top: 100px;
+    padding-bottom: 50px;
+    padding-left: 50px;
+    border-radius: 10px; /* Optional: Round corners */
+}
+/* Black container and image styles */
 .black-container {
-    color: #FFFFFF;
-    text-align: center;
-    position: right;
-    z-index: -1; /* Ensure it appears below the welcome message but above the video */
-    height: 50px;
-    padding-top: -50px;
-}
-.image{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+    position: relative;
+    z-index: 3; /* Ensure it is below the fortext */
+    width: 300px;
     height: auto;
+    margin-top: 50px; /* Add space between the top and the container */
+    margin-top: 20px;
+    margin-right: 140vh;
+    border-radius: 0px;
 }
+.image {
+    width: 20%; /* Match the black container's width */
+    height: auto;
+    border-radius: 50px;
+    margin-top: 60px;
+    margin-right: 110vh;
+    z-index: 3;
+}
+
 .footer {
     position: fixed;
     left: 0;
@@ -136,6 +225,7 @@ body, html {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     opacity: 0.95;
     
+}
 }
 #pfeedback {
     text-align: justify;
@@ -207,7 +297,7 @@ body, html {
 /* Image banner container */
 .image-banner-container {
     width: 80%;  /* Adjust width to take up half of the container */
-    height: 70%; /* Full height of the container */
+    height: 60%; /* Full height of the container */
     overflow: hidden; /* Hide any overflowing images */
     transform: translate(-30%, 15%); /* Adjust for perfect centering */
 }

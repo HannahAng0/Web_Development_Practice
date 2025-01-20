@@ -202,66 +202,74 @@ body, html {
     padding: 0; /* Remove any container-specific padding */
     width: 100%; /* Ensure full width of the screen */
 }
-.feedback_form {
-    width: 100%; /* Responsive width */
-    margin: 50px auto; /* Center horizontally */
-    z-index: 2;
-    position: absolute; /* Position absolute to overlay video */
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Adjust for perfect centering */
-    color: rgb(196, 97, 173); /* pink text for readability */
-    text-align: center; /* Center text */
-    padding: 10px; /* Padding around text */
-    border-radius: 10px; /* Optional: Rounded corners */
-    max-width: 600px;
-    
+.form-container {
+    position: relative; /* Create a positioning context for child elements */
+    display: flex; /* Arrange form and image in a row */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    height: auto; /* Adjust height based on content */
+    width: 40%; /* Reduce width of the container */
+    overflow: hidden; /* Hide overflowing content */
+    z-index: 0; /* Ensure it appears above the video */
+    background-color: rgb(79, 19, 65);
+    border: #333;
+    padding: 50px 0 50px 0; /* Adjust padding */
+    margin: 100px auto; /* Center the container horizontally */
+    border-radius: 20px;
 }
 
-.feedback_design {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    opacity: 0.95;
-    
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Space between form groups */
 }
+
+.form-group {
+    display: flex;
+    flex-direction: column; /* Align label and input vertically */
+    width: 100%; /* Full width of the parent container */
+    max-width: 900px; /* Limit width for better readability */
+    margin-bottom: 10px;
 }
-#pfeedback {
-    text-align: justify;
-    font-size: 15px;
-    color: #000000;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    
+
+label {
+    margin-bottom: 5px; /* Space between label and input */
+    font-size: 16px;
+    color: #ffffff;
+    font-family: Tahoma, sans-serif;
 }
-#name, #email {
-    width: 85%;
+
+input, textarea {
+    width: 100%; /* Make inputs and textareas full width */
     padding: 10px;
-    margin: 10px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
+    border: 1px solid rgb(86, 0, 66);
     box-sizing: border-box;
     border-radius: 5px;
+    background-color: rgb(125, 31, 103);
+    color: #fff; /* Text color */
 }
-#feedback {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    border-radius: 5px;
-}
+
 #submit {
-    background-color: rgb(196, 97, 173);
-    color: white;
+    background-color: rgb(255, 255, 255);
+    color: rgb(196, 97, 173);
     padding: 10px 20px;
-    margin: 10px 0;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-
+    transition: background-color 0.3s ease;
 }
+
+#submit:hover {
+    background-color: rgb(240, 200, 225); /* Lighter pink on hover */
+}
+
+@media (max-width: 768px) {
+    .form-group {
+        max-width: 100%; /* Make form responsive */
+    }
+}
+
 @media (max-width: 768px) {
     .nav {
         flex-direction: column;

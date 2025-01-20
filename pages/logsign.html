@@ -13,26 +13,26 @@
     </header>
 
     <main>
-        <div class="feedback_form">
-            <div class="feedback_design">
-                <h1 id="h1feedback">Have a question or feedback?</h1>
-                <p id="pfeedback">Hi! I'm Hannah Ang, I am beginner at web development, if you have
-                    any questions or feedback, feel free to send me a message. 
-                    I would love to hear from you!
-                </p>
-                <div class="form">
-                    <form action="https://formspree.io/f/xqaanrna" method="post">
+        <div class="form-container">
+            <div class="form">
+                <form action="https://formspree.io/f/xqaanrna" method="post">
+                    <div class="form-group">
                         <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" required><br><br>
-
+                        <input type="text" id="name" name="name" required>
+                    </div>
+            
+                    <div class="form-group">
                         <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required><br><br>
-
-                        <label for="feedback">Feedback:</label><br>
-                        <textarea id="feedback" name="feedback" rows="4" cols="50" required></textarea><br><br>
-                        <input id="submit" type="submit" value="Submit">
-                    </form>
-                </div>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="bio">Feedback:</label>
+                        <textarea id="bio" name="bio" rows="4" cols="30" required></textarea>
+                    </div>
+            
+                    <input id="submit" type="submit" value="Submit">
+                </form>
             </div>
         </div>
     </main>
